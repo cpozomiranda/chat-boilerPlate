@@ -23,6 +23,15 @@
             </div>
         </div>
         <div class="col-lg-6">
+            <span>
+                <ul>
+                    <li ng-repeat="user in Chat.users">
+                        <a href="#">{{user}}</a>
+                        <button>Bloquear</button>
+                        
+                    </li>
+                </ul>
+            </span>
             <span class="input-group-btn">
                 <button class="btn btn-lg btn-primary pull-right" ng-click="Chat.crearMensaje()">Enviar</button>
             </span>
