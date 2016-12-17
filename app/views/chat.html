@@ -1,41 +1,41 @@
+<div class="row">
 
-<div style="height: 100%;" class="chat-pos">
-    <div class="chat-pos">
-        <div class="chat-items">
-            <ul>
-                <li  ng-repeat="mensaje in Chat.mensajes">
-                    {{mensaje.user}} : {{mensaje.desc}}
-                    <span ng-show="mensaje.user == Chat.user">
-                        <button ng-click="Chat.eliminarMensaje(mensaje._id)">Eliminar</button>
-                    </span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="row navbar-fixed-bottom">
-        <div class="col-lg-6">
-            <div class="input-group ancho-texto">
-                <form ng-submit="Chat.crearMensaje()">
-                    <input type="text" class="form-control" ng-model="Chat.newMensaje">
-                </form>
-                
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <span>
-                <ul>
-                    <li ng-repeat="user in Chat.users">
-                        <a href="#">{{user}}</a>
-                        <button>Bloquear</button>
-                        
-                    </li>
-                </ul>
+  <div class="col-md-6">
+    <ul>
+        <li  ng-repeat="mensaje in Chat.mensajes">
+            {{mensaje.user}} : {{mensaje.desc}}
+            <span ng-show="mensaje.user == Chat.user">
+                <button ng-click="Chat.eliminarMensaje(mensaje._id)">Eliminar</button>
             </span>
-            <span class="input-group-btn">
-                <button class="btn btn-lg btn-primary pull-right" ng-click="Chat.crearMensaje()">Enviar</button>
-            </span>
-        </div>
-    </div>
+        </li>
+    </ul>
+  </div>
+
+  <div class="col-md-6">
+    <ul>
+      <li ng-repeat="user in Chat.users">
+          <a href="#">{{user}}</a>
+          <button class="btn btn-xs btn-danger">Bloquear</button>
+      </li>
+    </ul>
+  </div>
+
 </div>
+<div class="row">
 
+  <div class="col-md-6">
+    <div class="input-group ancho-texto">
+        <form ng-submit="Chat.crearMensaje()">
+            <input type="text" class="form-control" ng-model="Chat.newMensaje">
+        </form>
+        <span class="input-group-btn">
+          <button class="btn btn-lg btn-primary pull-right" ng-click="Chat.crearMensaje()">Enviar</button>
+        </span>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+
+  </div>
+
+</div>
