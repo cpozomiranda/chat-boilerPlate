@@ -66,6 +66,18 @@ angular.module('miapp')
         })
     }
 
+    //Método que devuelve un usuario para ingresar a detalle.
+    this.seleccionar = function seleccionar (nombre, cb) {
+     
+        if(!cb) { cb = function() {}}
+        $http
+          .get(this.basicResource + nombre)
+          .success(function success (data) {
+            cb(data)
+            return data
+          })
+    }
+
     var servicio = this
     $interval(function () {
       servicio.listarMensajes()

@@ -1,1 +1,7 @@
-<h1>HOLA</h1>
+<b>Nombre de usuario:</b> {{userName}} <br>
+<b>Mensajes del Usuario: </b>
+<ul>
+    <li ng-repeat="mensaje in mensajes">
+        {{mensaje.desc}}
+    </li>
+</ul>

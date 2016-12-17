@@ -26,7 +26,7 @@
             <span>
                 <ul>
                     <li ng-repeat="user in Chat.users">
-                        <a href="#">{{user}}</a>
+                        <a ui-sref="User({nombre: user})">{{user}}</a>
                         <button>Bloquear</button>
                         
                     </li>
