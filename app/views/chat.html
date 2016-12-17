@@ -1,0 +1,26 @@
+
+<div style="height: 100%;" class="chat-pos">
+    <div class="chat-pos">
+        <div class="chat-items">
+            <ul>
+                <li  ng-repeat="mensaje in Chat.mensajes">
+                    {{mensaje.texto}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="row navbar-fixed-bottom">
+        <div class="col-lg-6">
+            <div class="input-group ancho-texto">
+                <input type="text" class="form-control" ng-model="Chat.newMensaje">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <span class="input-group-btn">
+                <button class="btn btn-lg btn-primary pull-right" ng-click="Chat.crearMensaje()">Enviar</button>
+            </span>
+        </div>
+    </div>
+</div>
+

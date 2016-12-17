@@ -1,0 +1,13 @@
+.ancho-texto {
+    width: 100%;
+}
+
+.chat-pos {
+    display: flex;
+    /*align-items: flex-end;*/
+}
+
+.chat-items {
+    align-self:  flex-end;
+}
+

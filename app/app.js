@@ -1,14 +1,17 @@
 angular.module('miapp', ['ui.router'])
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('ListTodo', {
+      .state('Login', {
         url: '/',
-        controller:'ListController',
-        templateUrl:'app/views/list.html',
+        controller:'LoginController',
+        templateUrl:'app/views/login.html',
       })
+      .state('ChatPrincipal', {
+        url: '/chat',
+        controller:'ChatController',
+        templateUrl:'app/views/chat.html',
+      })
+      
     $urlRouterProvider.otherwise('/')
 })
-angular.module('miapp')
-  .controller('ListController', function($scope) {
-    $scope.todos = [{id: 1, desc: 'Todo 1'}, {id: 2, desc: 'Todo 2'}]
-  })
+
