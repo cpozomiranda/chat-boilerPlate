@@ -4,7 +4,10 @@
         <div class="chat-items">
             <ul>
                 <li  ng-repeat="mensaje in Chat.mensajes">
-                    {{mensaje.texto}}
+                    {{mensaje.user}} : {{mensaje.desc}}
+                    <span ng-show="mensaje.user == Chat.user">
+                        <button ng-click="Chat.eliminarMensaje(mensaje._id)">Eliminar</button>
+                    </span>
                 </li>
             </ul>
         </div>
@@ -13,7 +16,10 @@
     <div class="row navbar-fixed-bottom">
         <div class="col-lg-6">
             <div class="input-group ancho-texto">
-                <input type="text" class="form-control" ng-model="Chat.newMensaje">
+                <form ng-submit="Chat.crearMensaje()">
+                    <input type="text" class="form-control" ng-model="Chat.newMensaje">
+                </form>
+                
             </div>
         </div>
         <div class="col-lg-6">
