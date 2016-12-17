@@ -11,6 +11,12 @@ angular.module('miapp', ['ui.router'])
         controller:'ChatController',
         templateUrl:'app/views/chat.html',
       })
+      .state('User', {
+        url: '/user/:nombre',
+        controller:'UserController',
+        templateUrl:'app/views/user.html',
+      })
+
       
     $urlRouterProvider.otherwise('/')
 })
