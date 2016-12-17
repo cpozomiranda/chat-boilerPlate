@@ -53,12 +53,10 @@ angular.module('miapp')
         })
     }
 
-
     this.eliminarMensaje = function eliminarMensaje (id) {
       this.mensajes = this.mensajes.filter(function filter (el) {
         return el._id != id
       })
-
       $http
         .delete(this.resource + id)
         .success(function success () {
@@ -76,6 +74,12 @@ angular.module('miapp')
             cb(data)
             return data
           })
+    }
+
+    this.bloquearUsuario = function bloquearUsuario (user) {
+      this.mensajes = this.mensajes.filter(function filter (el) {
+        return el.user != user
+      })
     }
 
     var servicio = this
